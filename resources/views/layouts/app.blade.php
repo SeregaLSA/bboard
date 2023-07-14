@@ -5,36 +5,16 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Объявления</title>
+    <title>@yield('title')::Объявления</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
+    <link href="/styles/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="container">
         <h1 class="my-3 text-center">Объявления</h1>
-        @if (count($bbs) > 0)
-            <table class="table table-striped table-borderless">
-                <thead>
-                    <tr>
-                        <th>Товар</th>
-                        <th>Цена</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($bbs as $bb)
-                        <tr>
-                            <td><h4>{{ $bb->title }}</h4></td>
-                            <td>{{ $bb->price }}</td>
-                            <td>
-                                <a href="/{{ $bb->id }}">Подробнее...</a>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        @endif
+        @yield('content')
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
