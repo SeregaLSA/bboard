@@ -8,6 +8,7 @@
     <hr>
     <p>{{ $bb->content }}</p>
     <p>{{ $bb->price }}</p>
+    <p>Автор: {{ $bb->user->name }}</p>
     <p><a href="{{ route('index') }}">Назад</a></p>
 
 @endsection('content')
